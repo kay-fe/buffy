@@ -1,0 +1,7 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://buffy-prod-d48e1195e5.herokuapp.com/buffy-production/prod
+datamodel: datamodel.prisma
+secret: ${env:PRISMA_SECRET}
+hooks:
+    post-deploy:
+        - graphql get-schema -p prisma

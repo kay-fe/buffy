@@ -2,10 +2,12 @@
 .prettierrc
 variables.env
 generated/
-prisma.graphql
-*lock.json
 img/
+public/
 config.js
+*lock.json
+*.sample
+
 
 # Logs
 logs

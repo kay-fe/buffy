@@ -1,0 +1,120 @@
+{
+    "name": "buffy-frontend",
+    "version": "1.0.0",
+    "description": "Buffy! An example React, GraphQL, Next and Apollo",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next -p 7777",
+        "build": "next build",
+        "start": "next start",
+        "test": "NODE_ENV=test jest --watch",
+        "test-win": "SET NODE_ENV=test&& jest --watch",
+        "heroku-postbuild": "next build"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@apollo/client": "^3.2.0",
+        "@apollo/link-error": "^2.0.0-beta.3",
+        "@stripe/react-stripe-js": "^1.1.2",
+        "@stripe/stripe-js": "^1.9.0",
+        "apollo-upload-client": "^14.1.2",
+        "babel-core": "^6.26.3",
+        "babel-plugin-styled-components": "^1.11.1",
+        "date-fns": "^2.0.0-alpha.7",
+        "downshift": "^6.0.6",
+        "enzyme": "^3.6.0",
+        "enzyme-adapter-react-16": "^1.5.0",
+        "graphql": "^15.3.0",
+        "graphql-tag": "^2.11.0",
+        "lodash.debounce": "^4.0.8",
+        "next": "^9.5.3",
+        "next-with-apollo": "^5.1.0",
+        "nprogress": "^0.2.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.1",
+        "react-adopt": "^0.6.0",
+        "react-dom": "^16.13.1",
+        "react-transition-group": "^4.4.1",
+        "styled-components": "^5.2.0",
+        "waait": "^1.0.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "babel-jest": "^26.5.2",
+        "babel-plugin-module-resolver": "^3.1.1",
+        "casual": "^1.5.19",
+        "enzyme-to-json": "^3.3.4",
+        "graphql-tools": "^4.0.0",
+        "jest": "^23.6.0",
+        "jest-transform-graphql": "^2.1.0",
+        "prettier": "^2.0.5"
+    },
+    "jest": {
+        "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+        "testPathIgnorePatterns": [
+            "<rootDir>/.next/",
+            "<rootDir>/node_modules/"
+        ],
+        "transform": {
+            "\\.(gql|graphql)$": "jest-transform-graphql",
+            ".*": "babel-jest",
+            "^.+\\.js?$": "babel-jest"
+        }
+    },
+    "//": "This is our babel config, I prefer this over a .babelrc file",
+    "babel": {
+        "env": {
+            "development": {
+                "presets": [
+                    "next/babel"
+                ],
+                "plugins": [
+                    [
+                        "styled-components",
+                        {
+                            "ssr": true,
+                            "displayName": true
+                        }
+                    ]
+                ]
+            },
+            "production": {
+                "presets": [
+                    "next/babel"
+                ],
+                "plugins": [
+                    [
+                        "styled-components",
+                        {
+                            "ssr": true,
+                            "displayName": true
+                        }
+                    ]
+                ]
+            },
+            "test": {
+                "presets": [
+                    [
+                        "next/babel",
+                        {
+                            "preset-env": {
+                                "modules": "commonjs"
+                            }
+                        }
+                    ]
+                ],
+                "plugins": [
+                    [
+                        "styled-components",
+                        {
+                            "ssr": true,
+                            "displayName": true
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+}
