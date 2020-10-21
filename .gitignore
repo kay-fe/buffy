@@ -1,7 +1,6 @@
 # Buffy
 .prettierrc
 variables.env
-generated/
 img/
 public/
 config.js
